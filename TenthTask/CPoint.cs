@@ -24,14 +24,14 @@ namespace TenthTask
 
         public CPoint() 
         {
-            x = 0;
-            y = 0;
+            X = 0;
+            Y = 0;
         }
 
-        public CPoint(int x, int y) 
+        public CPoint(int X, int Y) 
         {
-            this.x = x;
-            this.y = y;
+            this.X = X;
+            this.Y = Y;
         }
 
        

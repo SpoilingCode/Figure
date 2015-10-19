@@ -9,7 +9,8 @@ namespace TenthTask
     class CQuadrate : CRectangle
     {
 
-        public CQuadrate() :base()
+        public CQuadrate() 
+            :base()
        {
        }
 
@@ -20,13 +21,7 @@ namespace TenthTask
 
       public override bool isGivenFigure()
       {
-          
-          if (side_AB == side_BC && side_BC == side_CD && side_CD == side_AD)
-          {
-              return true;
-          }
-          Console.WriteLine( "Данная фигура не является квадратом." );
-          return false;
+          return ( side_AB == side_BC && side_BC == side_CD && side_CD == side_AD && isCorner() );
       }
 
       public override double calcArea()
@@ -34,7 +29,13 @@ namespace TenthTask
           return side_AB * side_AB;
       }
 
-      
+      public override void assertGivenFigure()
+      {
+          if( !isGivenFigure() )
+          {
+              throw new Exception( "Данная фигура не является квадратом." );
+          }
+      }
 
     }
 }

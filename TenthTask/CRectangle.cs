@@ -65,16 +65,28 @@ namespace TenthTask
         {
             return !firstRectangle.Equals( secondRectangle );
         }
-     
 
+        public bool isCorner() 
+        {
+            double quadrateDiagonal = Math.Pow(side_AB, 2 ) + Math.Pow(side_AD, 2) ;
+            
+            double sinAlphaQuadrate = Math.Pow( side_AB, 2 ) / quadrateDiagonal;
+            double sinBettaQuadrate =  Math.Pow( side_AD, 2) / quadrateDiagonal;
+
+            double findCorner = Math.Sin( 90 * Math.PI / 180);
+            return ( Math.Pow(findCorner, 2) == sinAlphaQuadrate + sinBettaQuadrate );
+        }
+
+        public virtual void assertGivenFigure() 
+        {
+            if( !isGivenFigure() )
+            {
+                throw new Exception( "Данная фигура не является прямоугольником." );
+            }
+        }
         public virtual bool isGivenFigure()
         {
-            if ( side_AB == side_CD && side_BC == side_AD )
-            {
-                return true;
-            }
-            Console.WriteLine( "Данная фигура не является прямоугольником." );
-               return false;
+            return ( side_AB == side_CD && side_AD == side_BC && isCorner() );
         }
 
        public  double calcLengthOfSide(CPoint firstDot, CPoint secondDot) 

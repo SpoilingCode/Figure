@@ -43,57 +43,46 @@ namespace TenthTask
 
                                 firstRectangle = new CRectangle(new CPoint(8, 0), new CPoint(9, 1), new CPoint(1, 9), new CPoint(0, 8));
                                 secondRectangle = new CRectangle(new CPoint(3, 4), new CPoint(-6, 4), new CPoint(-6, -3), new CPoint(3, -3));
-                                if (firstRectangle.isGivenFigure())
-                                {
+                                  
+                                    firstRectangle.assertGivenFigure(); 
                                     Console.WriteLine("\nСоздан прямоугольник со сторонами: ");
                                     firstRectangle.outputDataOfFigure();
-                                }
+                              
+
                                 break;
                             }
                         case 2:
                             {
-                                if (firstRectangle.isGivenFigure())
-                                {
-                                    Console.WriteLine("Периметр прямоугольника:{0}", firstRectangle.calcPerimeter());
-                                }
+                                firstRectangle.assertGivenFigure(); 
+                                Console.WriteLine("Периметр прямоугольника:{0}", firstRectangle.calcPerimeter());
                                 break;
                             }
 
                         case 3:
                             {
-                                if (firstRectangle.isGivenFigure())
-                                {
-                                    Console.WriteLine("Площадь прямоугольника: {0}", firstRectangle.calcArea());
-                                }
+                                firstRectangle.assertGivenFigure(); 
+                                Console.WriteLine("Площадь прямоугольника: {0}", firstRectangle.calcArea());
                                 break;
                             }
                         case 4:
                             {
-                                quadrate = new CQuadrate(new CPoint(3, 3), new CPoint(5, 7), new CPoint(9, 5), new CPoint(7, 1));
-                                if (quadrate.isGivenFigure())
-                                {
-                                    Console.WriteLine("\nСоздан квадрат со сторонами: ");
-                                    quadrate.outputDataOfFigure();
-                                }
+                                quadrate = new CQuadrate( new CPoint(3, 3), new CPoint(5, 7), new CPoint(9, 5), new CPoint(7, 1) );
+
+                                quadrate.assertGivenFigure(); 
+                                Console.WriteLine("\nСоздан квадрат со сторонами: ");
+                                quadrate.outputDataOfFigure();
                                 break;
 
                             }
                         case 5:
                             {
-                                if (quadrate.isGivenFigure())
-                                {
-                                    Console.WriteLine("Периметр квадрата:{0}", quadrate.calcPerimeter());
-                                }
-                                
+                                quadrate.assertGivenFigure(); 
+                                Console.WriteLine("Периметр квадрата:{0}", quadrate.calcPerimeter());
                                 break;
                             }
                         case 6:
-                            {
-                                if (quadrate.isGivenFigure())
-                                {
-                                    Console.WriteLine("Площадь квадрата: {0}", quadrate.calcArea());
-                                }
-
+                            {     quadrate.assertGivenFigure(); 
+                                Console.WriteLine("Площадь квадрата: {0}", quadrate.calcArea());
                                 break;
                             }
                         case 7: 
