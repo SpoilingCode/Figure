@@ -92,12 +92,8 @@ namespace TenthTask
                                 Console.WriteLine("Второй прямоугольник со сторонами:");
                                 secondRectangle.outputDataOfFigure();
                                 Console.WriteLine("Площадь второго прямоугольника:{0}\n", secondRectangle.calcArea());
-                                
-                                if ( firstRectangle == secondRectangle )
-                                {
-                                    Console.WriteLine("Площади прямоугольников равны.");
-                                }
-                                else Console.WriteLine( "Площади данных прямоугольников не равны." );
+
+                                compareArea( firstRectangle, secondRectangle );
                                 break;
                             }
                         default: Console.WriteLine("Ошибка ввода\n"); break;
@@ -115,9 +111,18 @@ namespace TenthTask
 
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Exception{0}\nFile:{1}\nLocation:{2}", ex.Message, ex.Source, ex.TargetSite);
+                    Console.WriteLine("Exception: {0}\nFile: {1}\nLocation: {2}", ex.Message, ex.Source, ex.TargetSite);
                 }
             }
+        }
+
+        public static void compareArea( CRectangle firstRectangle, CRectangle secondRectangle ) 
+        {
+            if (firstRectangle == secondRectangle)
+            {
+                Console.WriteLine("Площади прямоугольников равны.");
+            }
+            else Console.WriteLine("Площади данных прямоугольников не равны.");
         }
 
     }
