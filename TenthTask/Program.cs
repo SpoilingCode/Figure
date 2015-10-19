@@ -44,11 +44,9 @@ namespace TenthTask
                                 firstRectangle = new CRectangle(new CPoint(8, 0), new CPoint(9, 1), new CPoint(1, 9), new CPoint(0, 8));
                                 secondRectangle = new CRectangle(new CPoint(3, 4), new CPoint(-6, 4), new CPoint(-6, -3), new CPoint(3, -3));
                                   
-                                    firstRectangle.assertGivenFigure(); 
-                                    Console.WriteLine("\nСоздан прямоугольник со сторонами: ");
-                                    firstRectangle.outputDataOfFigure();
-                              
-
+                                firstRectangle.assertGivenFigure(); 
+                                Console.WriteLine("\nСоздан прямоугольник со сторонами: ");
+                                firstRectangle.outputDataOfFigure();
                                 break;
                             }
                         case 2:
